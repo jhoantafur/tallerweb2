@@ -3,29 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Web Responsive con Flexbox</title>
+    <title>Estudio de Diseño Creativo</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <div class="logo">MiSitioWeb</div>
+        <div class="logo">CreativStudio</div>
         <nav class="main-nav">
             <ul class="nav-list">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
         <button class="menu-toggle">☰</button>
     </header>
 
-    <section id="inicio" class="hero">
+    <section id="hero" class="hero">
         <div class="hero-content">
-            <h1>Diseño Web Moderno</h1>
-            <p>Utilizando Flexbox y Diseño Responsivo</p>
-            <a href="#servicios" class="btn-primary">Explorar</a>
+            <h1>Diseño con <span>pasión</span>,<br>desarrollo con <span>propósito</span></h1>
+            <p>Transformamos tus ideas en experiencias digitales memorables</p>
+            <a href="#portfolio" class="btn-primary">Ver nuestro trabajo</a>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Sobre Nosotros</h2>
+                <p>Somos un estudio creativo especializado en diseño y desarrollo web. Nos apasiona crear experiencias digitales únicas que conectan con el público.</p>
+                <p>Fundado en 2021, nuestro equipo combina creatividad, estrategia y tecnología para ayudar a marcas y empresas a destacar en el mundo digital.</p>
+                <a href="#contacto" class="btn-secondary">Trabajemos juntos</a>
+            </div>
+            <div class="about-image">
+                <div class="image-placeholder"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Nuestro Portfolio</h2>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item">
+                <div class="portfolio-image" style="background-color: var(--accent-color);"></div>
+                <h3>Rediseño Web</h3>
+                <p>Tienda de moda</p>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image" style="background-color: var(--primary-color);"></div>
+                <h3>Aplicación Móvil</h3>
+                <p>Servicios financieros</p>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image" style="background-color: var(--secondary-color);"></div>
+                <h3>E-commerce</h3>
+                <p>Productos sostenibles</p>
+            </div>
         </div>
     </section>
 
@@ -33,39 +68,39 @@
         <h2>Nuestros Servicios</h2>
         <div class="services-container">
             <div class="service-card">
-                <div class="icon">🎨</div>
+                <div class="icon">✨</div>
                 <h3>Diseño UI/UX</h3>
-                <p>Creamos interfaces intuitivas y atractivas para mejorar la experiencia del usuario.</p>
+                <p>Creamos interfaces intuitivas y atractivas que encantan a los usuarios y reflejan la esencia de tu marca.</p>
             </div>
             <div class="service-card">
                 <div class="icon">💻</div>
                 <h3>Desarrollo Web</h3>
-                <p>Desarrollamos sitios web modernos, rápidos y optimizados para todos los dispositivos.</p>
+                <p>Construimos sitios web a medida, rápidos y optimizados que funcionan perfectamente en cualquier dispositivo.</p>
             </div>
             <div class="service-card">
-                <div class="icon">📱</div>
-                <h3>Sitios Responsivos</h3>
-                <p>Nos aseguramos que tu sitio se vea increíble en cualquier tamaño de pantalla.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="nosotros" class="about">
-        <div class="about-content">
-            <div class="about-image">
-                <div class="image-placeholder"></div>
-            </div>
-            <div class="about-text">
-                <h2>Sobre Nosotros</h2>
-                <p>Somos un equipo de desarrolladores y diseñadores apasionados por crear experiencias web excepcionales.</p>
-                <p>Nuestro enfoque combina diseño atractivo con la última tecnología para ofrecer sitios web que destacan.</p>
+                <div class="icon">🚀</div>
+                <h3>Estrategia Digital</h3>
+                <p>Definimos estrategias efectivas para aumentar tu presencia online y conectar con tu audiencia ideal.</p>
             </div>
         </div>
     </section>
 
     <section id="contacto" class="contact">
-        <h2>Contacto</h2>
         <div class="contact-container">
+            <div class="contact-info">
+                <h2>¡Hablemos!</h2>
+                <p>Estamos listos para conversar sobre tu próximo proyecto.</p>
+                <div class="contact-details">
+                    <p>📍 Avenida Creativa 456, Ciudad</p>
+                    <p>📞 +1 987 654 321</p>
+                    <p>✉️ hola@creativstudio.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">📸</a>
+                    <a href="#" class="social-icon">💼</a>
+                </div>
+            </div>
             <form class="contact-form">
                 <div class="form-group">
                     <label for="name">Nombre</label>
@@ -79,19 +114,17 @@
                     <label for="message">Mensaje</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn-primary">Enviar</button>
+                <button type="submit" class="btn-primary">Enviar mensaje</button>
             </form>
-            <div class="contact-info">
-                <h3>Información de Contacto</h3>
-                <p>📍 Calle Principal 123, Ciudad</p>
-                <p>📞 +1 234 567 890</p>
-                <p>✉️ info@misitioweb.com</p>
-            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2025 MiSitioWeb. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-logo">CreativStudio</div>
+            <p>Diseño y desarrollo web con propósito</p>
+            <p class="copyright">&copy; 2025 CreativStudio. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
