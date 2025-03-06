@@ -1,25 +1,26 @@
 /* 5. Variables CSS para colores y fuentes */
 :root {
-    --primary-color: #4a6de5;
-    --secondary-color: #2d3e8b;
-    --accent-color: #f86549;
-    --text-color: #333333;
-    --text-light: #777777;
+    /* Nueva paleta de colores más femenina/elegante */
+    --primary-color: #d87093; /* Rosa oscuro/Pink */
+    --secondary-color: #9370db; /* Púrpura medio/Purple */
+    --accent-color: #20b2aa; /* Verde turquesa/Light Sea Green */
+    --text-color: #4a4a4a;
+    --text-light: #8a8a8a;
     --bg-color: #ffffff;
-    --bg-alt-color: #f5f7ff;
-    --border-color: #e0e0e0;
-    --success-color: #4CAF50;
+    --bg-alt-color: #faf0f5; /* Fondo rosa muy claro */
+    --border-color: #e8e8e8;
     
-    --font-primary: 'Roboto', sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
+    /* Fuentes más elegantes */
+    --font-primary: 'Poppins', sans-serif;
+    --font-heading: 'Playfair Display', serif;
     
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
     
-    --border-radius: 8px;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 /* 2. Modelo de caja y reset básico */
@@ -32,50 +33,97 @@
 body {
     font-family: var(--font-primary);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7;
+    background-color: var(--bg-color);
 }
 
 /* Estilos generales */
 h1, h2, h3 {
     font-family: var(--font-heading);
     margin-bottom: var(--spacing-sm);
+    font-weight: 700;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+h1 span {
+    color: var(--primary-color);
 }
 
 h2 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 2.2rem;
     margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 p {
     margin-bottom: var(--spacing-sm);
+    color: var(--text-light);
 }
 
 section {
     padding: var(--spacing-lg) var(--spacing-md);
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
 .btn-primary {
     display: inline-block;
     background-color: var(--primary-color);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 0.7rem 1.7rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
 }
 
 /* 3. Flexbox para el Header */
@@ -85,14 +133,14 @@ section {
     align-items: center;
     padding: var(--spacing-sm) var(--spacing-md);
     background-color: var(--bg-color);
-    box-shadow: var(--shadow);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--primary-color);
     font-family: var(--font-heading);
@@ -104,18 +152,30 @@ section {
 }
 
 .nav-list li {
-    margin-left: var(--spacing-sm);
+    margin-left: var(--spacing-md);
 }
 
 .nav-list a {
     text-decoration: none;
     color: var(--text-color);
+    font-weight: 500;
     padding: 0.5rem;
-    transition: color 0.3s;
+    position: relative;
 }
 
-.nav-list a:hover {
-    color: var(--primary-color);
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.nav-list a:hover::after {
+    width: 100%;
 }
 
 .menu-toggle {
@@ -127,12 +187,14 @@ section {
     color: var(--text-color);
 }
 
-/* Hero Section */
+/* Hero Section - Reordenado con nuevo estilo */
 .hero {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--bg-alt-color);
     padding: var(--spacing-lg) var(--spacing-md);
     text-align: center;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
 }
 
 .hero-content {
@@ -140,27 +202,120 @@ section {
     margin: 0 auto;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-sm);
-}
-
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    color: var(--text-light);
 }
 
-/* 3. Flexbox para la sección de servicios */
-.services {
+/* About Section - Ahora viene primero */
+.about {
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.about-text {
+    flex: 1 1 400px;
+}
+
+.about-text h2 {
+    text-align: left;
+}
+
+.about-image {
+    flex: 1 1 400px;
+}
+
+.image-placeholder {
+    height: 350px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: calc(var(--border-radius) - 5px);
+}
+
+/* Portfolio Section - Nueva sección */
+.portfolio {
     background-color: var(--bg-alt-color);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.portfolio h2 {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
+}
+
+.portfolio-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.portfolio-item {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio-image {
+    height: 220px;
+    background-color: var(--primary-color);
+}
+
+.portfolio-item h3 {
+    margin: var(--spacing-sm) var(--spacing-sm) 0.25rem;
+    text-align: left;
+}
+
+.portfolio-item p {
+    margin: 0 var(--spacing-sm) var(--spacing-sm);
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+/* Services Section - Modificado y reordenado */
+.services {
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.services h2 {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
 }
 
 .services-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: var(--spacing-md);
-    margin-top: var(--spacing-md);
 }
 
 .service-card {
@@ -169,45 +324,94 @@ section {
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--bg-alt-color);
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card:hover::before {
+    height: 100%;
 }
 
 .icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-sm);
 }
 
-/* Sobre Nosotros */
-.about-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--spacing-md);
-}
-
-.about-image, .about-text {
-    flex: 1 1 400px;
-}
-
-.image-placeholder {
-    height: 300px;
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius);
-}
-
-/* Contacto */
+/* Contact Section - Rediseñado */
 .contact {
     background-color: var(--bg-alt-color);
+    padding: var(--spacing-lg) var(--spacing-md);
 }
 
 .contact-container {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.contact-form, .contact-info {
+.contact-info {
     flex: 1 1 400px;
+}
+
+.contact-info h2 {
+    text-align: left;
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-details {
+    margin: var(--spacing-md) 0;
+}
+
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    background-color: var(--secondary-color);
+}
+
+.contact-form {
+    flex: 1 1 400px;
+    background-color: var(--bg-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
 .form-group {
@@ -217,30 +421,53 @@ section {
 label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: bold;
+    font-weight: 500;
+    color: var(--text-color);
 }
 
 input, textarea {
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     font-family: var(--font-primary);
+    transition: border 0.3s ease;
 }
 
-.contact-info {
-    background-color: var(--bg-color);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
-/* Footer */
+/* Footer - Rediseñado */
 .footer {
     background-color: var(--text-color);
     color: white;
     text-align: center;
     padding: var(--spacing-md);
+}
+
+.footer-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    font-family: var(--font-heading);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: var(--spacing-xs);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    margin-top: var(--spacing-sm);
 }
 
 /* 4. Media Queries para diseño responsivo */
@@ -270,25 +497,30 @@ input, textarea {
         margin-bottom: var(--spacing-xs);
     }
     
-    /* Ajuste en secciones */
+    /* Ajustes para hero */
+    .hero {
+        min-height: 60vh;
+    }
+    
     .hero h1 {
         font-size: 2.2rem;
     }
     
-    .services-container {
-        justify-content: center;
+    .hero p {
+        font-size: 1rem;
     }
     
-    .service-card {
+    /* Ajuste para about */
+    .about-content {
+        flex-direction: column-reverse;
+    }
+    
+    /* Ajustes para portfolio y servicios */
+    .portfolio-item, .service-card {
         flex-basis: 100%;
     }
     
-    /* Alinear verticalmente contenido de About */
-    .about-content {
-        flex-direction: column;
-    }
-    
-    /* Ajustes para sección de contacto */
+    /* Ajuste para contacto */
     .contact-container {
         flex-direction: column;
     }
@@ -310,6 +542,11 @@ input, textarea {
     }
     
     .hero p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 }
